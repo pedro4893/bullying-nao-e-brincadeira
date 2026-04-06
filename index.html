@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>CyberEduca | Bullying e Cyberbullying com Evidências Científicas</title>
-    <meta name="description" content="Site informativo sobre bullying e cyberbullying com dados científicos, referências e guias práticos para jovens, pais e educadores.">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 (free icons) -->
+    <title>CyberEduca | Bullying e Cyberbullying - Jogo e Dados Científicos</title>
+    <meta name="description" content="Site interativo sobre bullying e cyberbullying com jogo educativo, animações de dados científicos e referências acadêmicas.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -18,72 +16,26 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #ffffff;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: #1e293b;
             line-height: 1.5;
-            scroll-behavior: smooth;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        /* Modo escuro */
-        body.dark-mode {
-            background-color: #0f172a;
-            color: #e2e8f0;
-        }
-
-        body.dark-mode .header {
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid #334155;
-        }
-
-        body.dark-mode .card {
-            background: #1e293b;
-            border-color: #334155;
-        }
-
-        body.dark-mode .data-box {
-            background: #1e293b;
-            border-left-color: #38bdf8;
-        }
-
-        body.dark-mode .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-        }
-
-        body.dark-mode .badge {
-            background: #334155;
-            color: #94a3b8;
-        }
-
-        body.dark-mode .btn-outline {
-            border-color: #38bdf8;
-            color: #38bdf8;
-        }
-
-        body.dark-mode .btn-outline:hover {
-            background: #1e293b;
-        }
-
-        body.dark-mode footer {
-            background: #020617;
+            min-height: 100vh;
         }
 
         .container {
-            max-width: 1280px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 24px;
         }
 
         /* Header */
         .header {
-            background: rgba(255, 255, 255, 0.98);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(12px);
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 1px solid #e2e8f0;
-            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
 
         .nav-bar {
@@ -99,19 +51,12 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 800;
-            letter-spacing: -0.3px;
-            background: linear-gradient(135deg, #0f3b5c, #2c7da0);
+            background: linear-gradient(135deg, #667eea, #764ba2);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-        }
-
-        body.dark-mode .logo {
-            background: linear-gradient(135deg, #7dd3fc, #38bdf8);
-            -webkit-background-clip: text;
-            background-clip: text;
         }
 
         .nav-links {
@@ -122,76 +67,37 @@
 
         .nav-links a {
             text-decoration: none;
-            font-weight: 500;
-            color: #475569;
-            transition: color 0.2s;
-        }
-
-        body.dark-mode .nav-links a {
-            color: #cbd5e1;
+            font-weight: 600;
+            color: #4a5568;
+            transition: color 0.3s;
         }
 
         .nav-links a:hover {
-            color: #2c7da0;
-        }
-
-        .theme-toggle {
-            background: none;
-            border: none;
-            font-size: 1.3rem;
-            cursor: pointer;
-            padding: 8px;
-            border-radius: 50%;
-            transition: background 0.2s;
-            color: #475569;
-        }
-
-        body.dark-mode .theme-toggle {
-            color: #fbbf24;
+            color: #667eea;
         }
 
         .btn-primary {
-            background: #2c7da0;
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
             border: none;
             padding: 10px 24px;
             border-radius: 40px;
             font-weight: 600;
-            font-size: 0.9rem;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: transform 0.3s, box-shadow 0.3s;
             text-decoration: none;
             display: inline-block;
         }
 
         .btn-primary:hover {
-            background: #1f5e7a;
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(44, 125, 160, 0.3);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
         }
 
-        .btn-outline {
-            background: transparent;
-            border: 1.5px solid #2c7da0;
-            color: #2c7da0;
-            padding: 8px 20px;
-            border-radius: 40px;
-            font-weight: 600;
-            transition: all 0.2s;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-outline:hover {
-            background: #eef4f9;
-            transform: translateY(-2px);
-        }
-
-        /* Hero */
+        /* Hero Section com Animação */
         .hero {
-            padding: 80px 0 60px;
-            background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
-            transition: background 0.3s;
+            padding: 60px 0 40px;
+            color: white;
         }
 
         .hero-grid {
@@ -204,251 +110,287 @@
 
         .hero-content {
             flex: 1;
-            min-width: 280px;
         }
 
         .hero-content h1 {
-            font-size: 3.2rem;
-            font-weight: 800;
+            font-size: 3.5rem;
+            font-weight: 900;
             line-height: 1.2;
-            letter-spacing: -0.02em;
-            background: linear-gradient(135deg, #0f3b5c, #2c7da0);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
             margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
 
         .hero-content p {
             font-size: 1.2rem;
-            color: #475569;
             margin-bottom: 28px;
+            opacity: 0.95;
         }
 
-        body.dark-mode .hero-content p {
-            color: #cbd5e1;
-        }
-
-        .stats-grid {
-            display: flex;
-            gap: 32px;
-            margin-top: 32px;
-            flex-wrap: wrap;
-        }
-
-        .stat-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(8px);
-            border-radius: 20px;
-            padding: 16px 24px;
-            text-align: center;
+        /* Gráfico Animado */
+        .chart-container {
             flex: 1;
-            min-width: 100px;
-            border: 1px solid #e2e8f0;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 28px;
+            padding: 28px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
-        body.dark-mode .stat-card {
-            background: rgba(30, 41, 59, 0.7);
-            border-color: #334155;
+        .chart-title {
+            text-align: center;
+            margin-bottom: 24px;
+            font-weight: 700;
+            font-size: 1.1rem;
         }
 
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 800;
-            color: #2c7da0;
+        .bar-item {
+            margin-bottom: 20px;
         }
 
-        /* Seções */
+        .bar-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .bar-bg {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            height: 40px;
+        }
+
+        .bar-fill {
+            background: linear-gradient(90deg, #fbbf24, #f59e0b);
+            width: 0%;
+            height: 100%;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 12px;
+            color: #1e293b;
+            font-weight: bold;
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Cards */
         section {
-            padding: 70px 0;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        body.dark-mode section {
-            border-bottom-color: #334155;
+            padding: 60px 0;
         }
 
         .section-title {
             font-size: 2.2rem;
-            font-weight: 700;
+            font-weight: 800;
             margin-bottom: 16px;
-            letter-spacing: -0.3px;
+            color: white;
+            text-align: center;
         }
 
         .section-sub {
-            font-size: 1.1rem;
-            color: #64748b;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.85);
             margin-bottom: 48px;
-            max-width: 780px;
-        }
-
-        body.dark-mode .section-sub {
-            color: #94a3b8;
-        }
-
-        .badge {
-            background: #e0f2fe;
-            color: #0c4a6e;
-            border-radius: 100px;
-            padding: 6px 14px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 20px;
-            letter-spacing: 0.3px;
+            font-size: 1.1rem;
         }
 
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 28px;
-            margin-top: 20px;
         }
 
         .card {
             background: white;
             border-radius: 24px;
             padding: 32px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            border: 1px solid #f1f5f9;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         .card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
 
         .card i {
             font-size: 2.5rem;
-            color: #2c7da0;
+            color: #667eea;
             margin-bottom: 20px;
         }
 
         .card h3 {
             font-size: 1.4rem;
             margin-bottom: 12px;
+            color: #1e293b;
         }
 
-        .data-box {
-            background: #f8fafc;
-            border-left: 5px solid #2c7da0;
-            padding: 24px 28px;
-            border-radius: 20px;
-            margin: 32px 0;
-            transition: transform 0.2s;
+        .card p {
+            color: #64748b;
         }
 
-        .data-box:hover {
-            transform: translateX(6px);
+        /* Jogo */
+        .game-section {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 40px;
+            margin: 40px 0;
+            padding: 48px;
         }
 
-        /* FAQ */
-        .faq-item {
+        .game-container {
             background: white;
-            border-radius: 16px;
+            border-radius: 28px;
+            padding: 32px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .game-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .game-score {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #667eea;
             margin-bottom: 16px;
-            border: 1px solid #e2e8f0;
-            overflow: hidden;
-            transition: all 0.2s;
         }
 
-        body.dark-mode .faq-item {
-            background: #1e293b;
-            border-color: #334155;
-        }
-
-        .faq-question {
-            padding: 20px 24px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .game-question {
+            font-size: 1.3rem;
             font-weight: 600;
-            font-size: 1.1rem;
+            margin-bottom: 24px;
+            text-align: center;
+            color: #1e293b;
         }
 
-        .faq-question i {
+        .game-options {
+            display: grid;
+            gap: 12px;
+        }
+
+        .game-option {
+            background: #f1f5f9;
+            padding: 16px;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .game-option:hover {
+            background: #e2e8f0;
+            transform: translateX(8px);
+        }
+
+        .game-option.correct {
+            background: #10b981;
+            color: white;
+        }
+
+        .game-option.wrong {
+            background: #ef4444;
+            color: white;
+        }
+
+        .game-feedback {
+            margin-top: 24px;
+            padding: 16px;
+            border-radius: 16px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .game-next {
+            margin-top: 24px;
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 40px;
+            font-weight: 700;
+            cursor: pointer;
             transition: transform 0.3s;
         }
 
-        .faq-item.active .faq-question i {
-            transform: rotate(180deg);
+        .game-next:hover {
+            transform: scale(1.02);
         }
 
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            padding: 0 24px;
-            color: #64748b;
-            line-height: 1.6;
+        .game-result {
+            text-align: center;
+            padding: 32px;
         }
 
-        body.dark-mode .faq-answer {
-            color: #cbd5e1;
+        .game-result h3 {
+            font-size: 2rem;
+            margin-bottom: 16px;
         }
 
-        .faq-item.active .faq-answer {
-            max-height: 300px;
-            padding: 0 24px 24px 24px;
+        /* Mascote */
+        .mascot {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            cursor: pointer;
+            animation: bounce 2s infinite;
+            z-index: 1000;
         }
 
-        /* Footer */
-        footer {
-            background: #0f172a;
-            color: #94a3b8;
-            padding: 56px 0 32px;
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
 
-        .footer-grid {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 40px;
+        .mascot img {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
-        .footer-links a {
-            color: #cbd5e1;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 10px;
-            transition: color 0.2s;
+        /* Referências */
+        .ref-box {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 24px;
+            padding: 32px;
+            margin-top: 40px;
         }
 
-        .footer-links a:hover {
-            color: #38bdf8;
+        .ref-box h3 {
+            color: #1e293b;
+            margin-bottom: 20px;
         }
 
-        /* Animações */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .ref-box ul {
+            list-style: none;
         }
 
-        .fade-up {
-            animation: fadeInUp 0.6s ease forwards;
+        .ref-box li {
+            margin-bottom: 12px;
+            padding-left: 24px;
+            position: relative;
+            color: #475569;
+        }
+
+        .ref-box li:before {
+            content: "📄";
+            position: absolute;
+            left: 0;
         }
 
         @media (max-width: 768px) {
             .hero-content h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
-            .nav-bar {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .section-title {
-                font-size: 1.8rem;
-            }
-            .stats-grid {
-                flex-direction: column;
+            .game-section {
+                padding: 24px;
             }
         }
     </style>
@@ -465,42 +407,61 @@
             <div class="nav-links">
                 <a href="#conceito">Conceito</a>
                 <a href="#dados">Dados</a>
-                <a href="#impactos">Saúde mental</a>
-                <a href="#prevencao">Prevenção</a>
-                <a href="#faq">FAQ</a>
+                <a href="#impactos">Impactos</a>
+                <a href="#jogo">Jogo</a>
                 <a href="#referencias">Referências</a>
             </div>
-            <div style="display: flex; gap: 12px; align-items: center;">
-                <button class="theme-toggle" id="themeToggle" aria-label="Alternar modo escuro">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <a href="#prevencao" class="btn-primary"><i class="fas fa-arrow-right"></i> Guia prático</a>
-            </div>
+            <a href="#jogo" class="btn-primary"><i class="fas fa-gamepad"></i> Jogue agora</a>
         </div>
     </div>
 </header>
 
 <main>
-    <!-- Hero -->
+    <!-- Hero com animação de dados -->
     <div class="hero">
         <div class="container hero-grid">
-            <div class="hero-content fade-up">
-                <span class="badge">📊 baseado em evidências científicas</span>
-                <h1>Bullying & Cyberbullying:<br>Ciência, dados e ação</h1>
-                <p>Um site construído com referências acadêmicas e dados atualizados para informar, prevenir e apoiar vítimas, famílias e escolas.</p>
-                <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-                    <a href="#dados" class="btn-primary">Explorar estatísticas</a>
-                    <a href="#prevencao" class="btn-outline">Como ajudar <i class="fas fa-chevron-right"></i></a>
-                </div>
-                <div class="stats-grid">
-                    <div class="stat-card"><div class="stat-number">46%</div><div>adolescentes EUA sofreram cyberbullying (2022)</div></div>
-                    <div class="stat-card"><div class="stat-number">13,2%</div><div>jovens Brasil (PeNSE/IBGE)</div></div>
-                    <div class="stat-card"><div class="stat-number">52%</div><div>jovens 16-29 já sofreram bullying</div></div>
-                </div>
+            <div class="hero-content">
+                <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 40px; display: inline-block; margin-bottom: 20px;">
+                    📊 Baseado em evidências científicas
+                </span>
+                <h1>Bullying & Cyberbullying:<br>Conhecimento é a melhor defesa</h1>
+                <p>Dados reais da Pew Research Center (2022) e PeNSE/IBGE (2024) mostram a realidade. Aprenda, jogue e faça a diferença.</p>
+                <a href="#jogo" class="btn-primary" style="background: white; color: #667eea;">🎮 Jogue e aprenda →</a>
             </div>
-            <div style="flex: 0.6; text-align: center;">
-                <i class="fas fa-user-shield" style="font-size: 7rem; color: #2c7da0;"></i>
-                <i class="fas fa-mobile-alt" style="font-size: 3.5rem; color: #38bdf8; margin-left: -20px;"></i>
+            <div class="chart-container">
+                <div class="chart-title">
+                    <i class="fas fa-chart-line"></i> Prevalência de Cyberbullying - Dados Científicos
+                </div>
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span>🇺🇸 EUA (Pew Research, 2022)</span>
+                        <span id="us-value">0%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" id="us-bar" style="width: 0%">46%</div>
+                    </div>
+                </div>
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span>🇧🇷 Brasil (PeNSE/IBGE, 2024)</span>
+                        <span id="br-value">0%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" id="br-bar" style="width: 0%">13.2%</div>
+                    </div>
+                </div>
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span>🌍 Média Global (Zhu et al., 2021)</span>
+                        <span id="global-value">0%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" id="global-bar" style="width: 0%">35%</div>
+                    </div>
+                </div>
+                <p style="margin-top: 20px; font-size: 0.85rem; text-align: center; opacity: 0.9;">
+                    <i class="fas fa-chart-simple"></i> Dados referenciados: Pew Research Center (2022) | PeNSE/IBGE (2024) | Zhu et al. (2021)
+                </p>
             </div>
         </div>
     </div>
@@ -508,232 +469,320 @@
     <div class="container">
         <!-- Conceito -->
         <section id="conceito">
-            <span class="badge">🔍 definições fundamentais</span>
             <h2 class="section-title">O que é Bullying e Cyberbullying?</h2>
-            <p class="section-sub">Comportamento agressivo, intencional e repetido, com desequilíbrio de poder. No ambiente digital, ganha novas dimensões de alcance e persistência.</p>
+            <p class="section-sub">Comportamento agressivo, intencional e repetido com desequilíbrio de poder</p>
             <div class="cards-grid">
                 <div class="card">
                     <i class="fas fa-fist-raised"></i>
-                    <h3>Bullying tradicional</h3>
-                    <p>Agressões físicas, verbais, psicológicas ou sociais no ambiente escolar ou presencial. Caracterizado por <strong>intencionalidade, repetição e desequilíbrio de poder</strong>.</p>
+                    <h3>Bullying Tradicional</h3>
+                    <p>Agressões físicas, verbais ou psicológicas no ambiente escolar ou presencial. Caracterizado por intencionalidade, repetição e desequilíbrio de poder.</p>
                 </div>
                 <div class="card">
-                    <i class="fas fa-laptop-code"></i>
+                    <i class="fas fa-mobile-alt"></i>
                     <h3>Cyberbullying</h3>
-                    <p>Agressões por meios digitais: redes sociais, jogos, SMS. Elementos únicos: <strong>anonimato, viralização, persistência</strong> (o conteúdo não some) e alcance ilimitado.</p>
+                    <p>Agressões por meios digitais: redes sociais, jogos, WhatsApp. Elementos únicos: anonimato, viralização, persistência 24/7.</p>
                 </div>
-                <div class="card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Dados globais (revisão 2021)</h3>
-                    <p>Prevalência de vitimização por cyberbullying entre adolescentes varia de <strong>13,99% a 57,5%</strong> dependendo do país e metodologia. <em>(Zhu et al., Frontiers in Public Health)</em></p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Dados científicos -->
-        <section id="dados">
-            <span class="badge">📈 evidências internacionais e nacionais</span>
-            <h2 class="section-title">O que a ciência revela?</h2>
-            <div class="data-box">
-                <i class="fas fa-chart-simple" style="font-size: 1.6rem; margin-right: 12px;"></i>
-                <strong>📌 Pesquisa Pew Research Center (2022) – adolescentes 13-17 anos (EUA):</strong><br>
-                46% já sofreram pelo menos uma forma de cyberbullying. Principais: <strong>32% chamado por nomes ofensivos</strong>, 22% rumores falsos, 17% imagens íntimas não solicitadas. Aparência é o principal motivo (15%).
-            </div>
-            <div class="data-box">
-                <i class="fas fa-chart-simple" style="font-size: 1.6rem; margin-right: 12px;"></i>
-                <strong>📌 Brasil – Pesquisa Nacional de Saúde do Escolar (PeNSE/IBGE, 2024):</strong><br>
-                Prevalência de cyberbullying entre jovens de 13 a 17 anos: <strong>13,2%</strong>. Maior entre meninas (16,2%) e jovens com saúde mental comprometida. Dados de mais de 159 mil estudantes.
-            </div>
-            <div class="cards-grid">
-                <div class="card">
-                    <i class="fas fa-school"></i>
-                    <h3>Bullying geral no Brasil</h3>
-                    <p>DataSenado (2023): <strong>33%</strong> dos brasileiros já sofreram bullying na escola. Entre jovens 16-29 anos: <strong>52%</strong>.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-globe-americas"></i>
-                    <h3>Revisão sistemática global</h3>
-                    <p>Zhu et al. (2021) identificou fatores de risco como tempo excessivo online, histórico de vitimização e problemas familiares. Fator de proteção: empatia e bom relacionamento parental.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Impactos na saúde mental -->
-        <section id="impactos">
-            <span class="badge">🧠 consequências documentadas</span>
-            <h2 class="section-title">Impactos na saúde mental</h2>
-            <div class="cards-grid">
                 <div class="card">
                     <i class="fas fa-brain"></i>
-                    <h3>Depressão & Ansiedade</h3>
-                    <p>Vítimas apresentam níveis significativamente maiores de transtornos de ansiedade e depressão <em>(revisão SOPRANI et al., 2024)</em>.</p>
+                    <h3>Impacto Psicológico</h3>
+                    <p>Vítimas apresentam taxas 3x maiores de depressão e ansiedade. O cyberbullying pode ser ainda mais danoso pela sensação de não ter escape.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dados e Impactos -->
+        <section id="dados">
+            <h2 class="section-title">Dados Científicos Atualizados</h2>
+            <p class="section-sub">Evidências de pesquisas nacionais e internacionais</p>
+            <div class="cards-grid">
+                <div class="card">
+                    <i class="fas fa-chart-pie"></i>
+                    <h3>Pew Research Center (2022)</h3>
+                    <p><strong>46%</strong> dos adolescentes americanos (13-17 anos) já sofreram cyberbullying. <strong>32%</strong> foram chamados por nomes ofensivos, <strong>22%</strong> tiveram rumores falsos espalhados.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-chart-bar"></i>
+                    <h3>Brasil - PeNSE/IBGE (2024)</h3>
+                    <p><strong>13,2%</strong> dos jovens brasileiros (13-17 anos) já foram vítimas de cyberbullying. Mais de <strong>159 mil</strong> estudantes entrevistados. Maior prevalência entre meninas (16,2%).</p>
                 </div>
                 <div class="card">
                     <i class="fas fa-heart-broken"></i>
-                    <h3>Ideiação suicida</h3>
-                    <p>Pesquisa UFMG (2024) mostrou forte associação entre cyberbullying e ideação suicida, tentativas de suicídio e automutilação entre adolescentes brasileiros.</p>
+                    <h3>Saúde Mental (UFMG, 2024)</h3>
+                    <p>Forte associação entre cyberbullying e ideação suicida, tentativas de suicídio e automutilação entre adolescentes brasileiros.</p>
                 </div>
-                <div class="card">
-                    <i class="fas fa-user-slash"></i>
-                    <h3>Isolamento & Queda escolar</h3>
-                    <p>Baixa autoestima, absenteísmo, abandono escolar e dificuldade de confiar em pares.</p>
-                </div>
-            </div>
-            <div class="data-box">
-                <i class="fas fa-exclamation-triangle"></i> <strong>Dado crucial:</strong> A repetição sistemática de agressões online pode ser ainda mais danosa que a física, pois a vítima sente que não há escape (acesso 24/7). Especialistas recomendam apoio psicológico imediato.
             </div>
         </section>
 
-        <!-- Prevenção e Ação -->
-        <section id="prevencao">
-            <span class="badge">⚡ guia baseado em evidências</span>
-            <h2 class="section-title">Prevenção e Ação: o que funciona?</h2>
+        <section id="impactos">
+            <h2 class="section-title">Consequências Comprovadas</h2>
+            <p class="section-sub">O que a ciência revela sobre os impactos na saúde mental</p>
             <div class="cards-grid">
                 <div class="card">
-                    <i class="fas fa-users"></i>
-                    <h3>Para pais e responsáveis</h3>
-                    <p>✅ Diálogo aberto e frequente sobre vida online.<br>✅ Oferecer apoio emocional – vítimas não devem responder às agressões.<br>✅ Ensinar cidadania digital: privacidade, bloqueio e denúncia.</p>
+                    <i class="fas fa-cloud-rain"></i>
+                    <h3>Depressão e Ansiedade</h3>
+                    <p>Vítimas apresentam níveis significativamente mais elevados de transtornos de ansiedade e depressão (SOPRANI et al., 2024).</p>
                 </div>
                 <div class="card">
-                    <i class="fas fa-chalkboard-user"></i>
-                    <h3>Escolas e educadores</h3>
-                    <p>✅ Implementar programas socioemocionais estruturados.<br>✅ Capacitação docente para identificar sinais de sofrimento.<br>✅ Criar canais seguros de denúncia e intervir rapidamente.</p>
+                    <i class="fas fa-user-friends"></i>
+                    <h3>Isolamento Social</h3>
+                    <p>Vergonha e medo levam ao afastamento de amigos e familiares, criando um ciclo de solidão e vulnerabilidade.</p>
                 </div>
                 <div class="card">
-                    <i class="fas fa-gavel"></i>
-                    <h3>Legislação brasileira (Lei 14.811/2024)</h3>
-                    <p>Bullying: multa. <strong>Cyberbullying: reclusão de 2 a 4 anos + multa</strong> (agravante pela amplificação e dano na internet). Marco legal de proteção a crianças e adolescentes.</p>
+                    <i class="fas fa-school"></i>
+                    <h3>Baixo Rendimento Escolar</h3>
+                    <p>Queda no desempenho acadêmico, aumento do absenteísmo e risco de abandono escolar.</p>
                 </div>
-            </div>
-            <div class="data-box" style="background: #fff3e0; border-left-color: #e67e22;">
-                <i class="fas fa-lightbulb"></i> <strong>Para jovens (vítimas e testemunhas):</strong> Não se isole. Salve prints, bloqueie o agressor, denuncie à plataforma e a um adulto de confiança. Se você é testemunha: apoie a vítima, não compartilhe conteúdo ofensivo. <strong>Quebrar o silêncio é o primeiro passo.</strong>
             </div>
         </section>
 
-        <!-- FAQ -->
-        <section id="faq">
-            <span class="badge">❓ perguntas frequentes</span>
-            <h2 class="section-title">Dúvidas comuns</h2>
-            <div class="faq-item">
-                <div class="faq-question">
-                    Qual a diferença entre bullying e cyberbullying?
-                    <i class="fas fa-chevron-down"></i>
+        <!-- Jogo Interativo -->
+        <section id="jogo" class="game-section">
+            <div class="game-container" id="game-container">
+                <div class="game-header">
+                    <i class="fas fa-gamepad" style="font-size: 3rem; color: #667eea;"></i>
+                    <h2 style="margin-top: 16px;">🎮 AntiBully Defender</h2>
+                    <p>Teste seus conhecimentos sobre bullying e cyberbullying</p>
                 </div>
-                <div class="faq-answer">O bullying ocorre no ambiente presencial (escola, rua), enquanto o cyberbullying acontece no ambiente digital. O cyberbullying pode ser anônimo, alcançar muitas pessoas rapidamente e a vítima não tem "lugar seguro" para escapar, pois a internet está disponível 24 horas.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    O que fazer se meu filho sofre cyberbullying?
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">1) Ouça sem julgar e ofereça apoio emocional. 2) Guarde as provas (prints). 3) Não responda às agressões. 4) Bloqueie o agressor. 5) Denuncie à plataforma e, se necessário, à polícia. 6) Procure apoio psicológico profissional.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    O cyberbullying é crime no Brasil?
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">Sim. A Lei 14.811/2024 prevê reclusão de 2 a 4 anos e multa para casos de cyberbullying. Além disso, injúria, calúnia e difamação praticadas online também são crimes previstos no Código Penal.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    Como posso denunciar casos de cyberbullying?
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">Você pode denunciar às próprias plataformas (Instagram, TikTok, WhatsApp, etc.), ao Conselho Tutelar, à Delegacia de Crimes Cibernéticos mais próxima ou pelo Disque 100 (Direitos Humanos). Em situações de emergência, ligue 190.</div>
+                <div id="game-content"></div>
             </div>
         </section>
 
-        <!-- Referências científicas -->
+        <!-- Referências -->
         <section id="referencias">
-            <span class="badge">📚 fontes confiáveis</span>
-            <h2 class="section-title">Referências científicas</h2>
-            <ul style="list-style: none; background: #f8fafc; padding: 28px; border-radius: 24px;">
-                <li style="margin-bottom: 12px;">📄 <strong>Pew Research Center.</strong> (2022). <em>Teens and Cyberbullying 2022</em>.</li>
-                <li style="margin-bottom: 12px;">📄 <strong>IBGE – PeNSE.</strong> (2024). Pesquisa Nacional de Saúde do Escolar: análise de cyberbullying no Brasil. Ministério da Saúde.</li>
-                <li style="margin-bottom: 12px;">📄 <strong>Zhu, C. et al.</strong> (2021). Cyberbullying Among Adolescents and Children: A Systematic Review. <em>Frontiers in Public Health</em>, 9, 720909.</li>
-                <li style="margin-bottom: 12px;">📄 <strong>UFMG/Fundação Maria Cecília Souto Vidigal.</strong> (2024). Estudo sobre cyberbullying entre adolescentes brasileiros (PeNSE).</li>
-                <li style="margin-bottom: 12px;">📄 <strong>SOPRANI, B. S.; FORESTI, N. S.; RICARDO, L. S.</strong> (2024). Impactos e desafios do bullying no contexto escolar. <em>Revista Foco</em>, v. 17.</li>
-                <li style="margin-bottom: 12px;">📄 <strong>DataSenado.</strong> (2023). Pesquisa Nacional de Bullying nas Escolas.</li>
-                <li>📄 <strong>Lei Federal 14.811/2024</strong> – Proteção de crianças e adolescentes contra violência nas escolas.</li>
-            </ul>
-            <p style="margin-top: 28px; font-style: italic; background: #eef2f9; padding: 18px; border-radius: 20px; text-align: center;">
-                🆘 Em caso de emergência ou ideação suicida, ligue para o <strong>CVV (188)</strong> 24h ou procure o CAPS mais próximo.
-            </p>
+            <div class="ref-box">
+                <h3><i class="fas fa-book-open"></i> Referências Científicas</h3>
+                <ul>
+                    <li><strong>Pew Research Center.</strong> (2022). Teens and Cyberbullying 2022. Disponível em: pewresearch.org</li>
+                    <li><strong>IBGE – PeNSE.</strong> (2024). Pesquisa Nacional de Saúde do Escolar: análise de cyberbullying no Brasil. Ministério da Saúde.</li>
+                    <li><strong>Zhu, C. et al.</strong> (2021). Cyberbullying Among Adolescents and Children: A Systematic Review of the Global Situation, Risk Factors, and Preventive Measures. <em>Frontiers in Public Health</em>, 9, 720909.</li>
+                    <li><strong>UFMG/Fundação Maria Cecília Souto Vidigal.</strong> (2024). Estudo revela elevada prevalência de cyberbullying entre adolescentes brasileiros.</li>
+                    <li><strong>SOPRANI, B. S.; FORESTI, N. S.; RICARDO, L. S.</strong> (2024). IMPACTOS E DESAFIOS DO BULLYING NO CONTEXTO ESCOLAR: UMA REVISÃO INTEGRATIVA DA LITERATURA. <em>Revista Foco</em>, v. 17.</li>
+                    <li><strong>DataSenado.</strong> (2023). Pesquisa Nacional de Bullying nas Escolas.</li>
+                    <li><strong>Lei Federal 14.811/2024</strong> – Institui medidas de proteção à criança e ao adolescente contra a violência nas escolas.</li>
+                </ul>
+                <p style="margin-top: 24px; padding: 16px; background: #fef3c7; border-radius: 16px; text-align: center;">
+                    🆘 <strong>Precisa de ajuda?</strong> Ligue para o CVV (188) 24h ou Disque 100 (Direitos Humanos)
+                </p>
+            </div>
         </section>
     </div>
 </main>
 
-<footer>
-    <div class="container">
-        <div class="footer-grid">
-            <div>
-                <div class="logo" style="color: white; margin-bottom: 16px; background: none; -webkit-background-clip: unset; color: #38bdf8;">
-                    <i class="fas fa-shield-heart"></i> CyberEduca
-                </div>
-                <p>Informação baseada em ciência para combater o bullying e cyberbullying. Um ambiente mais seguro é possível com empatia e ação.</p>
-            </div>
-            <div class="footer-links">
-                <h4 style="color: white; margin-bottom: 16px;">Navegação</h4>
-                <a href="#conceito">Conceito</a>
-                <a href="#dados">Dados científicos</a>
-                <a href="#prevencao">Guia prático</a>
-                <a href="#faq">FAQ</a>
-            </div>
-            <div>
-                <h4 style="color: white; margin-bottom: 16px;">Apoio emergencial</h4>
-                <p><i class="fas fa-phone-alt"></i> CVV: 188 (24h)<br>
-                <i class="fas fa-school"></i> Disque 100 – Direitos Humanos<br>
-                <i class="fas fa-gavel"></i> Delegacia de Crimes Cibernéticos</p>
-            </div>
-        </div>
-        <div style="border-top: 1px solid #334155; margin-top: 48px; padding-top: 24px; text-align: center; font-size: 0.85rem;">
-            © 2025 CyberEduca – conteúdo referenciado para uso educacional. Todos os dados citados possuem fontes científicas e institucionais.
-        </div>
+<!-- Mascote -->
+<div class="mascot" id="mascot">
+    <div style="background: white; border-radius: 50%; padding: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); cursor: pointer;">
+        <i class="fas fa-shield-cat" style="font-size: 3rem; color: #667eea;"></i>
     </div>
-</footer>
+</div>
 
 <script>
-    // Modo escuro
-    const themeToggle = document.getElementById('themeToggle');
-    const icon = themeToggle.querySelector('i');
-    
-    themeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        if (document.body.classList.contains('dark-mode')) {
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
-        } else {
-            icon.classList.remove('fa-sun');
-            icon.classList.add('fa-moon');
-        }
-    });
+    // Animação dos gráficos (scroll reveal com dados reais)
+    const observerOptions = {
+        threshold: 0.3,
+        rootMargin: "0px 0px -50px 0px"
+    };
 
-    // FAQ accordion
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        question.addEventListener('click', () => {
-            item.classList.toggle('active');
-        });
-    });
-
-    // Scroll reveal (animações simples)
-    const fadeElements = document.querySelectorAll('.card, .data-box, .stat-card');
-    const observer = new IntersectionObserver((entries) => {
+    const chartObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                // Animar barras com dados reais
+                const usBar = document.getElementById('us-bar');
+                const brBar = document.getElementById('br-bar');
+                const globalBar = document.getElementById('global-bar');
+                const usValue = document.getElementById('us-value');
+                const brValue = document.getElementById('br-value');
+                const globalValue = document.getElementById('global-value');
+                
+                setTimeout(() => {
+                    usBar.style.width = '46%';
+                    brBar.style.width = '13.2%';
+                    globalBar.style.width = '35%';
+                    usValue.textContent = '46%';
+                    brValue.textContent = '13.2%';
+                    globalValue.textContent = '35%';
+                }, 200);
+                chartObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1 });
+    }, observerOptions);
+
+    const chartContainer = document.querySelector('.chart-container');
+    if (chartContainer) chartObserver.observe(chartContainer);
+
+    // Jogo Quiz
+    const questions = [
+        {
+            question: "Qual a principal diferença entre bullying e cyberbullying?",
+            options: [
+                "Cyberbullying é menos grave",
+                "Cyberbullying pode ser anônimo e ocorrer 24/7",
+                "Bullying só acontece na escola",
+                "Não há diferença"
+            ],
+            correct: 1,
+            explanation: "Cyberbullying pode ser anônimo, viralizar rapidamente e a vítima não tem escape, pois a internet está sempre presente."
+        },
+        {
+            question: "Segundo o Pew Research Center (2022), qual porcentagem de adolescentes americanos já sofreu cyberbullying?",
+            options: ["25%", "35%", "46%", "58%"],
+            correct: 2,
+            explanation: "A pesquisa mostrou que 46% dos adolescentes de 13-17 anos já sofreram pelo menos uma forma de cyberbullying."
+        },
+        {
+            question: "Qual a penalidade para cyberbullying segundo a Lei 14.811/2024?",
+            options: ["Apenas multa", "Prisão de 6 meses", "Reclusão de 2 a 4 anos e multa", "Trabalho comunitário"],
+            correct: 2,
+            explanation: "Cyberbullying é considerado mais grave devido à amplificação e repercussão na internet, com pena de 2 a 4 anos de reclusão."
+        },
+        {
+            question: "Qual dessas é uma ação recomendada para vítimas de cyberbullying?",
+            options: [
+                "Responder com mais agressões",
+                "Ignorar e não contar para ninguém",
+                "Guardar provas (prints) e procurar um adulto de confiança",
+                "Apagar tudo e fingir que nada aconteceu"
+            ],
+            correct: 2,
+            explanation: "Guardar provas é fundamental para denúncia. Buscar apoio de um adulto de confiança é o primeiro passo para resolver a situação."
+        },
+        {
+            question: "Segundo a PeNSE/IBGE (2024), qual a prevalência de cyberbullying entre jovens brasileiros?",
+            options: ["5,2%", "13,2%", "21,5%", "33,7%"],
+            correct: 1,
+            explanation: "A pesquisa nacional com mais de 159 mil estudantes revelou que 13,2% dos jovens de 13-17 anos já sofreram cyberbullying."
+        }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+    let answered = false;
+    let gameActive = true;
+
+    function loadQuestion() {
+        if (currentQuestion >= questions.length) {
+            showResult();
+            return;
+        }
+        
+        const q = questions[currentQuestion];
+        let html = `
+            <div class="game-score">⭐ Pontuação: ${score}/${questions.length}</div>
+            <div class="game-question">${q.question}</div>
+            <div class="game-options">
+        `;
+        
+        q.options.forEach((opt, idx) => {
+            html += `<div class="game-option" data-opt="${idx}">${opt}</div>`;
+        });
+        
+        html += `
+            </div>
+            <div class="game-feedback" id="game-feedback"></div>
+            <button class="game-next" id="next-btn" style="display: none;">Próxima questão →</button>
+        `;
+        
+        const gameContent = document.getElementById('game-content');
+        if (gameContent) gameContent.innerHTML = html;
+        
+        // Adicionar eventos
+        document.querySelectorAll('.game-option').forEach(opt => {
+            opt.addEventListener('click', () => checkAnswer(parseInt(opt.dataset.opt)));
+        });
+        
+        answered = false;
+    }
     
-    fadeElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        observer.observe(el);
+    function checkAnswer(selected) {
+        if (answered || !gameActive) return;
+        answered = true;
+        
+        const q = questions[currentQuestion];
+        const isCorrect = (selected === q.correct);
+        
+        if (isCorrect) {
+            score++;
+            document.querySelector(`.game-option[data-opt="${selected}"]`).classList.add('correct');
+            document.getElementById('game-feedback').innerHTML = `
+                <div style="background: #d1fae5; color: #065f46; padding: 12px; border-radius: 12px;">
+                    ✅ Correto! ${q.explanation}
+                </div>
+            `;
+        } else {
+            document.querySelector(`.game-option[data-opt="${selected}"]`).classList.add('wrong');
+            document.querySelector(`.game-option[data-opt="${q.correct}"]`).classList.add('correct');
+            document.getElementById('game-feedback').innerHTML = `
+                <div style="background: #fee2e2; color: #991b1b; padding: 12px; border-radius: 12px;">
+                    ❌ Incorreto! A resposta certa é: ${q.options[q.correct]}<br><small>${q.explanation}</small>
+                </div>
+            `;
+        }
+        
+        document.getElementById('next-btn').style.display = 'block';
+        document.getElementById('next-btn').addEventListener('click', () => {
+            currentQuestion++;
+            loadQuestion();
+        });
+    }
+    
+    function showResult() {
+        const gameContent = document.getElementById('game-content');
+        const percentage = (score / questions.length) * 100;
+        let message = "";
+        
+        if (percentage === 100) message = "🎉 Perfeito! Você é um verdadeiro AntiBully Defender! 🎉";
+        else if (percentage >= 60) message = "👍 Bom trabalho! Continue aprendendo e compartilhando conhecimento!";
+        else message = "💪 Continue estudando! O conhecimento é a melhor arma contra o bullying!";
+        
+        gameContent.innerHTML = `
+            <div class="game-result">
+                <i class="fas fa-trophy" style="font-size: 4rem; color: #fbbf24;"></i>
+                <h3>Quiz Finalizado!</h3>
+                <p style="font-size: 1.5rem; margin: 20px 0;">Sua pontuação: ${score}/${questions.length}</p>
+                <p style="margin-bottom: 24px;">${message}</p>
+                <button class="game-next" id="restart-btn">🔄 Jogar novamente</button>
+            </div>
+        `;
+        
+        document.getElementById('restart-btn')?.addEventListener('click', () => {
+            currentQuestion = 0;
+            score = 0;
+            answered = false;
+            loadQuestion();
+        });
+    }
+    
+    // Iniciar jogo
+    loadQuestion();
+    
+    // Mascote interativo
+    const mascot = document.getElementById('mascot');
+    let messageIndex = 0;
+    const messages = [
+        "💪 Você não está sozinho!",
+        "📱 Guarde prints e denuncie!",
+        "🤝 Seja um aliado, não um espectador",
+        "🧠 Conhecimento é poder!",
+        "💬 Converse com um adulto de confiança"
+    ];
+    
+    mascot.addEventListener('click', () => {
+        const msg = messages[messageIndex % messages.length];
+        const tooltip = document.createElement('div');
+        tooltip.textContent = msg;
+        tooltip.style.position = 'fixed';
+        tooltip.style.bottom = '100px';
+        tooltip.style.right = '20px';
+        tooltip.style.background = 'white';
+        tooltip.style.color = '#1e293b';
+        tooltip.style.padding = '12px 20px';
+        tooltip.style.borderRadius = '20px';
+        tooltip.style.boxShadow = '0 4px 15px rgba(0,0,0,0.2)';
+        tooltip.style.fontWeight = '600';
+        tooltip.style.zIndex = '1000';
+        document.body.appendChild(tooltip);
+        
+        setTimeout(() => tooltip.remove(), 3000);
+        messageIndex++;
     });
 </script>
 </body>
