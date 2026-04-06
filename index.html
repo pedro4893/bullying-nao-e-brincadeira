@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>CyberEduca | Bullying e Cyberbullying com Evidências Científicas</title>
+    <meta name="description" content="Site informativo sobre bullying e cyberbullying com dados científicos, referências e guias práticos para jovens, pais e educadores.">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (free icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafc;
+            color: #1e2a3e;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* header */
+        .header {
+            background: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(0px);
+            background: rgba(255, 255, 255, 0.96);
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+            color: #0f3b5c;
+        }
+
+        .logo i {
+            font-size: 2rem;
+            color: #2c7da0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #2c3e50;
+            transition: color 0.2s;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover {
+            color: #2c7da0;
+        }
+
+        /* botão cta */
+        .btn-primary {
+            background: #2c7da0;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: #1f5e7a;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid #2c7da0;
+            color: #2c7da0;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .btn-outline:hover {
+            background: #eef4f9;
+        }
+
+        /* hero */
+        .hero {
+            padding: 60px 0 40px;
+            background: linear-gradient(135deg, #eef7fc 0%, #ffffff 100%);
+        }
+
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 260px;
+        }
+
+        .hero-content h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #0f3b5c, #2c7da0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 28px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 32px;
+            margin-top: 24px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #1f5e7a;
+        }
+
+        /* cards e seções */
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.3px;
+            color: #0f3b5c;
+        }
+
+        .section-sub {
+            font-size: 1.1rem;
+            color: #4a627a;
+            margin-bottom: 40px;
+            max-width: 780px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 24px;
+            padding: 28px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #eef2f6;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.1);
+        }
+
+        .card i {
+            font-size: 2.2rem;
+            color: #2c7da0;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        .badge {
+            background: #e2f0f5;
+            color: #0f5b7a;
+            border-radius: 100px;
+            padding: 6px 14px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+
+        .data-box {
+            background: #eef3fa;
+            border-left: 5px solid #2c7da0;
+            padding: 20px 24px;
+            border-radius: 20px;
+            margin: 32px 0;
+        }
+
+        .ref-list {
+            list-style: none;
+        }
+        .ref-list li {
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            border-left: 3px solid #bdd4e2;
+            padding-left: 16px;
+        }
+
+        footer {
+            background: #0f2c3b;
+            color: #cbd5e1;
+            padding: 48px 0 32px;
+        }
+
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 32px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .nav-bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <div class="nav-bar">
+            <div class="logo">
+                <i class="fas fa-shield-heart"></i>
+                <span>CyberEduca</span>
+            </div>
+            <div class="nav-links">
+                <a href="#conceito">Conceito</a>
+                <a href="#dados">Dados científicos</a>
+                <a href="#impactos">Saúde mental</a>
+                <a href="#prevencao">Prevenção</a>
+                <a href="#referencias">Referências</a>
+            </div>
+            <a href="#prevencao" class="btn-primary"><i class="fas fa-arrow-right"></i> Guia prático</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Hero -->
+    <div class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="badge">📊 baseado em evidências</span>
+                <h1>Bullying & Cyberbullying:<br>Ciência, dados e ação</h1>
+                <p>Um site construído com referências científicas e dados atualizados para informar, prevenir e apoiar vítimas, famílias e escolas.</p>
+                <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                    <a href="#dados" class="btn-primary">Explorar estatísticas</a>
+                    <a href="#prevencao" class="btn-outline">Como ajudar <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item"><div class="stat-number">46%</div><div>adolescentes EUA (2022)</div></div>
+                    <div class="stat-item"><div class="stat-number">13,2%</div><div>jovens Brasil (PeNSE)</div></div>
+                    <div class="stat-item"><div class="stat-number">52%</div><div>jovens 16-29 já sofreram bullying</div></div>
+                </div>
+            </div>
+            <div style="flex: 0.8; min-width: 200px; text-align: center;">
+                <i class="fas fa-user-graduate" style="font-size: 8rem; color: #b9d8e8;"></i>
+                <i class="fas fa-mobile-alt" style="font-size: 4rem; color: #2c7da0; margin-left: -20px;"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Conceito -->
+        <section id="conceito">
+            <span class="badge">🔍 definições</span>
+            <h2 class="section-title">O que é Bullying e Cyberbullying?</h2>
+            <p class="section-sub">Comportamento agressivo, intencional e repetido, com desequilíbrio de poder. No ambiente digital, ganha novas dimensões.</p>
+            <div class="cards-grid">
+                <div class="card">
+                    <i class="fas fa-fist-raised"></i>
+                    <h3>Bullying tradicional</h3>
+                    <p>Agressões físicas, verbais, psicológicas ou sociais no ambiente escolar ou presencial. Caracterizado por <strong>intencionalidade, repetição e desequilíbrio de poder</strong>.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Cyberbullying</h3>
+                    <p>Agressões por meios digitais: redes sociais, jogos, SMS. Elementos únicos: <strong>anonimato, viralização, persistência</strong> (o conteúdo não some) e alcance ilimitado.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Dados globais (revisão 2021)</h3>
+                    <p>Prevalência de vitimização por cyberbullying entre adolescentes varia de <strong>13,99% a 57,5%</strong> dependendo do país e metodologia. (Zhu et al., Frontiers in Public Health).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dados científicos -->
+        <section id="dados">
+            <span class="badge">📈 evidências internacionais e nacionais</span>
+            <h2 class="section-title">O que a ciência revela?</h2>
+            <div class="data-box">
+                <i class="fas fa-chart-simple" style="font-size: 1.6rem; margin-right: 12px;"></i>
+                <strong>Pesquisa Pew Research Center (2022) – adolescentes 13-17 anos (EUA):</strong><br>
+                46% já sofreram pelo menos uma forma de cyberbullying. Principais: <strong>32% chamado por nomes ofensivos</strong>, 22% rumores falsos, 17% imagens íntimas não solicitadas. Aparência é o principal motivo (15%).
+            </div>
+            <div class="data-box">
+                <i class="fas fa-chart-simple" style="font-size: 1.6rem; margin-right: 12px;"></i>
+                <strong>Brasil – Pesquisa Nacional de Saúde do Escolar (PeNSE/IBGE, 2024):</strong><br>
+                Prevalência de cyberbullying entre jovens de 13 a 17 anos: <strong>13,2%</strong>. Maior entre meninas (16,2%) e jovens com saúde mental comprometida. Dados de mais de 159 mil estudantes.
+            </div>
+            <div class="cards-grid" style="margin-top: 8px;">
+                <div class="card">
+                    <i class="fas fa-school"></i>
+                    <h3>Bullying geral no Brasil</h3>
+                    <p>DataSenado (2023): <strong>33%</strong> dos brasileiros já sofreram bullying na escola. Entre jovens 16-29 anos: <strong>52%</strong>.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-globe-americas"></i>
+                    <h3>Revisão sistemática global</h3>
+                    <p>Zhu et al. (2021) identificou fatores de risco como tempo excessivo online, histórico de vitimização e problemas familiares. Fator de proteção: empatia e bom relacionamento parental.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impactos na saúde mental -->
+        <section id="impactos">
+            <span class="badge">🧠 consequências documentadas</span>
+            <h2 class="section-title">Impactos na saúde mental</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Depressão & Ansiedade</h3>
+                    <p>Vítimas apresentam níveis significativamente maiores de transtornos de ansiedade e depressão (revisão SOPRANI et al., 2024).</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-heart-broken"></i>
+                    <h3>Ideiação suicida</h3>
+                    <p>Pesquisa UFMG (2024) mostrou forte associação entre cyberbullying e ideação suicida, tentativas de suicídio e automutilação entre adolescentes brasileiros.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-user-slash"></i>
+                    <h3>Isolamento & Queda escolar</h3>
+                    <p>Baixa autoestima, absenteísmo, abandono escolar e dificuldade de confiar em pares.</p>
+                </div>
+            </div>
+            <div class="data-box">
+                <i class="fas fa-exclamation-triangle"></i> <strong>Dado crucial:</strong> A repetição sistemática de agressões online pode ser ainda mais danosa que a física, pois a vítima sente que não há escape (acesso 24/7). Especialistas recomendam apoio psicológico imediato.
+            </div>
+        </section>
+
+        <!-- Prevenção e Ação -->
+        <section id="prevencao">
+            <span class="badge">⚡ guia baseado em evidências</span>
+            <h2 class="section-title">Prevenção e Ação: o que funciona?</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <i class="fas fa-users"></i>
+                    <h3>Para pais e responsáveis</h3>
+                    <p>✅ Diálogo aberto e frequente sobre vida online.<br>
+                    ✅ Oferecer apoio emocional – vítimas não devem responder às agressões.<br>
+                    ✅ Ensinar cidadania digital: privacidade, bloqueio e denúncia.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-chalkboard-user"></i>
+                    <h3>Escolas e educadores</h3>
+                    <p>✅ Implementar programas socioemocionais estruturados.<br>
+                    ✅ Capacitação docente para identificar sinais de sofrimento.<br>
+                    ✅ Criar canais seguros de denúncia e intervir rapidamente.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-gavel"></i>
+                    <h3>Legislação brasileira (Lei 14.811/2024)</h3>
+                    <p>Bullying: multa. <strong>Cyberbullying: reclusão de 2 a 4 anos + multa</strong> (agravante pela amplificação e dano na internet). Marco legal de proteção a crianças e adolescentes.</p>
+                </div>
+            </div>
+            <div class="data-box" style="background: #fff3e0; border-left-color: #e67e22;">
+                <i class="fas fa-lightbulb"></i> <strong>Para jovens (vítimas e testemunhas):</strong> Não se isole. Salve prints, bloqueie o agressor, denuncie à plataforma e a um adulto de confiança. Se você é testemunha: apoie a vítima, não compartilhe conteúdo ofensivo. <strong>Quebrar o silêncio é o primeiro passo.</strong>
+            </div>
+        </section>
+
+        <!-- Referências científicas -->
+        <section id="referencias">
+            <span class="badge">📚 fontes confiáveis</span>
+            <h2 class="section-title">Referências científicas</h2>
+            <ul class="ref-list">
+                <li><strong>Pew Research Center.</strong> (2022). <em>Teens and Cyberbullying 2022</em>. Disponível em: pewresearch.org.</li>
+                <li><strong>IBGE – PeNSE.</strong> (2024). Pesquisa Nacional de Saúde do Escolar: análise de cyberbullying no Brasil. Ministério da Saúde.</li>
+                <li><strong>Zhu, C. et al.</strong> (2021). Cyberbullying Among Adolescents and Children: A Systematic Review of the Global Situation, Risk Factors, and Preventive Measures. <em>Frontiers in Public Health</em>, 9, 720909.</li>
+                <li><strong>UFMG/Fundação Maria Cecília Souto Vidigal.</strong> (2024). Estudo revela elevada prevalência de cyberbullying entre adolescentes brasileiros (com base na PeNSE).</li>
+                <li><strong>SOPRANI, B. S.; FORESTI, N. S.; RICARDO, L. S.</strong> (2024). IMPACTOS E DESAFIOS DO BULLYING NO CONTEXTO ESCOLAR: UMA REVISÃO INTEGRATIVA DA LITERATURA. <em>Revista Foco</em>, v. 17, e4862.</li>
+                <li><strong>DataSenado.</strong> (2023). Pesquisa Nacional de Bullying nas Escolas.</li>
+                <li><strong>Lei Federal 14.811/2024</strong> – Institui medidas de proteção à criança e ao adolescente contra a violência nas escolas.</li>
+            </ul>
+            <p style="margin-top: 24px; font-style: italic; background: #eef2f9; padding: 16px; border-radius: 20px;">Este site é uma ferramenta educativa baseada em evidências. Em caso de emergência ou ideação suicida, ligue para o CVV (188) ou procure o CAPS mais próximo.</p>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="logo" style="color: white; margin-bottom: 12px;"><i class="fas fa-shield-heart"></i> CyberEduca</div>
+                <p>Informação baseada em ciência para combater o bullying e cyberbullying. Um ambiente mais seguro é possível com empatia e ação.</p>
+            </div>
+            <div>
+                <h4 style="color: white;">Navegação</h4>
+                <ul style="list-style: none; margin-top: 12px;">
+                    <li><a href="#conceito" style="color: #bbd4e6;">Conceito</a></li>
+                    <li><a href="#dados" style="color: #bbd4e6;">Dados científicos</a></li>
+                    <li><a href="#prevencao" style="color: #bbd4e6;">Guia prático</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: white;">Apoio emergencial</h4>
+                <p><i class="fas fa-phone-alt"></i> CVV: 188 (24h)<br>
+                <i class="fas fa-school"></i> Disque 100 – Direitos Humanos</p>
+            </div>
+        </div>
+        <div style="border-top: 1px solid #2c4e66; margin-top: 40px; padding-top: 24px; text-align: center; font-size: 0.85rem;">
+            © 2025 CyberEduca – conteúdo referenciado para uso educacional. Todos os dados citados possuem fontes científicas e institucionais.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
